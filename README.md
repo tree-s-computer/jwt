@@ -22,3 +22,26 @@ JWS에 대한 자세한 내용은 [rfc7515](https://datatracker.ietf.org/doc/htm
 - JWS 페이로드(클레임 세트): 사용자의 신원과 그들이 허용된 권한과 같은 검증 가능한 보안 정보을 포함합니다.
 
 - JWS 서명: 토큰이 신뢰할 수 있고 변조되지 않았음을 확인하는 데 사용됩니다. JWT를 사용할 때 저장하고 사용하기 전에 그 서명을 확인해야 합니다.
+
+다음은 인코딩된 JWT의 예입니다.
+
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+```
+
+위의 예시를 디코딩하면 다음과 같은 JSON 객체를 얻을 수 있습니다.
+
+```json
+// Header
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+
+// Payload
+{
+  "sub": "1234567890",
+  "name": "John Doe",
+  "iat": 1516239022
+}
+```
